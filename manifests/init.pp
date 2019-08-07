@@ -1,7 +1,7 @@
 class defaults (
 
-  timezone    = $defaults::params::timezone,
-  ntp_servers = $defaults::params::ntp_servers,
+  $timezone    = $defaults::params::timezone,
+  $ntp_servers = $defaults::params::ntp_servers,
 
 ) inherits defaults::params {
 
