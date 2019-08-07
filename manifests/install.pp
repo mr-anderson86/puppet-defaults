@@ -1,4 +1,9 @@
-class defaults {
+class defaults::install (
+
+  timezone    = $defaults::params::timezone,
+  ntp_servers = $defaults::params::ntp_servers,
+
+) {
 
   ssh_autorized_key { 'someuser@somehost' :
     ensure    => present,
@@ -17,13 +22,14 @@ class defaults {
 
   # https://forge.puppet.com/saz/timezone
   class { 'timezone':
-    timezone  => 'Asia/Jerusalem',
+    timezone  => "$timezone",
   }
 
   # Just incase you want to use ntpdate
   # https://forge.puppet.com/saz/ntp
   class { 'ntp::ntpdate' 
-      server_list => ['server1.ntp.org','server2.ntpnorg'],
+      server_list => $ntp_servers,
+      require     => Class['timezone'],
   }
 
 }
