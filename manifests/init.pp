@@ -7,7 +7,7 @@ class defaults (
 
   class { 'defaults::install' : 
     timezone    => $timezone,
-    ntp_servers => $ntp_servers  
+    ntp_servers => $ntp_servers,
   }
 
 }
