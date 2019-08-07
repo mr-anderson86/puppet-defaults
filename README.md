@@ -30,12 +30,12 @@ This is a simple example of a defaults module for puppet, which installs default
 * .bash_profile
 * .bashrc
 
-## Usage:
-### Default usage:
+## Usage
+### Default usage
 ```puppet
 include defaults
 ```
-### Usage with params:
+### Usage with params
 ```puppet
 class { 'defaults':
     timezone    => 'Asia/Jerusalem',
