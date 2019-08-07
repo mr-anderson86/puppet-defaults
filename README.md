@@ -19,4 +19,5 @@ It also contains a few files if anyone wants to include in his/her manifest:
 ## Usage:
 ### Default usage:
 ```puppet
-include defaults```
+include defaults
+```
