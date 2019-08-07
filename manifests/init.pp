@@ -10,6 +10,6 @@ class defaults (
     timezone    => $timezone,
     ntp_servers => $ntp_servers,
 
-}
+  }
 
 }
