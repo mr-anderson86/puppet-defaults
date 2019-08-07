@@ -6,8 +6,8 @@ This is a simple example of a defaults module for puppet, which installs default
 
 ## Installations and configuration:
 * adding some ssh public key into the autorized_keys file
-* installs vim
-* install git
+* installing vim
+* installing git
 * Setting timezone (default is Asia/Jerusalem)
 * Setting ntpdate (with some default servers).
 
