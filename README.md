@@ -21,3 +21,10 @@ It also contains a few files if anyone wants to include in his/her manifest:
 ```puppet
 include defaults
 ```
+### Usage with params:
+```puppet
+class { 'defaults':
+    timezone    => 'Asia/Jerusalem',
+    ntp_servers => ['server1.ntp.org','server2.ntpnorg'],
+}
+```
