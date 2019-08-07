@@ -5,9 +5,11 @@ class defaults (
 
 ) inherits defaults::params {
 
-  class { 'defaults::install' : 
+  class { 'defaults::install' :
+
     timezone    => $timezone,
     ntp_servers => $ntp_servers,
-  }
+
+}
 
 }
