@@ -7,6 +7,22 @@
   "source": "https://github.com/mr-anderson86/puppet-defaults",
   "project_page": "https://github.com/mr-anderson86/puppet-defaults",
   "issues_url": "https://github.com/mr-anderson86/puppet-defaults/issues",
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    }
+   ],
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
@@ -19,6 +35,12 @@
     {
       "name": "saz-timezone",
       "version_range": ">=3.4.0"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 3.6.2 <= 6.7.2"
     }
   ]
 }
