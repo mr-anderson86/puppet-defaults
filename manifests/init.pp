@@ -5,11 +5,31 @@ class defaults (
 
 ) inherits defaults::params {
 
-  class { 'defaults::install' :
+  ssh_autorized_key { 'someuser@somehost' :
+    ensure    => present,
+    user      => 'someuser',
+    type      => 'ssh-rsa',
+    key       => 'SomeSshPublicKeyWhatSoEverItIsSupposedToBeVeryVeryVeryLong',  
+  }
 
-    timezone    => $timezone,
-    ntp_servers => $ntp_servers,
+  package { 'vim' :
+    ensure    => present,
+  }
 
+  package { 'git' :
+    ensure    => present,
+  }
+
+  # https://forge.puppet.com/saz/timezone
+  class { 'timezone':
+    timezone  => "$timezone",
+  }
+
+  # Just incase you want to use ntpdate
+  # https://forge.puppet.com/saz/ntp
+  class { 'ntp::ntpdate' 
+      server_list => $ntp_servers,
+      require     => Class['timezone'],
   }
 
 }
